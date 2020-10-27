@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "@emotion/styled";
+import Box from "./components/box";
 
 function App() {
+  const Container = styled.div`
+    margin: 3em auto;
+    text-align: center;
+  `;
+
+  const pictures = async (q) => {
+    const apiRes = await fetch(``);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="App container">
+      <div className="input-group mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search for pictures"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        ></input>
+        <div className="input-group-append">
+          <button
+            className="btn btn-outline-secondary"
+            type="button"
+            id="button-addon2"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+
+      <Box />
+    </Container>
   );
 }
 
